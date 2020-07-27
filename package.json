@@ -1,8 +1,8 @@
 {
   "name": "dockerized-hello",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "server.js",
-  "repository": "https://github.com/odjhey/private-node-hello-world",
+  "repository": "git@github.com:odjhey/node-www-dockerized-hello-world.git",
   "author": "Odee <odjhey@gmail.com>",
   "license": "MIT",
   "scripts": {
