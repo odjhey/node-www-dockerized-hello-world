@@ -1,0 +1,22 @@
+version: "3"
+services:
+  simple-sms-redis:
+    image: redis
+    container_name: simple-sms-redis
+    restart: always
+    volumes:
+      - ./.data:/data
+  simple-sms-notify-service-dev:
+    container_name: simple-sms-notify-service-dev
+    image: odjhey/simple-sms-notify-service:latest
+    restart: always
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: "node index.js"
+    ports:
+      - "9090:8080"
+    environment:
+      PORT: "8080"
+      REDIS_HOST: "simple-sms-redis"
+      REDIS_PORT: "6379"
